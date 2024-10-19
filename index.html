@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogSphere</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BlogSphere</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#create-post">Create Post</a>
+            <input type="text" id="search-bar" placeholder="Search posts..." autocomplete="off" oninput="searchPosts()">
+        </nav>
+    </header>
+    <section id="create-post">
+        <h2>Create a New Post</h2>
+        <form id="postForm">
+            <input type="text" id="post-title" placeholder="Post Title" autocomplete="off" required><br>
+            <textarea id="post-content" placeholder="Write your post..." required></textarea><br>
+            <label for="post-category">Category:</label>
+            <select id="post-category">
+                <option value="tech">Tech</option>
+                <option value="lifestyle">Lifestyle</option>
+                <option value="travel">Travel</option>
+                <option value="education">Education</option>
+            </select><br>
+            <button type="submit">Post</button>
+            
+        </form>
+    </section>
+
+    <section id="posts-section">
+        <h2>Recent Posts</h2>
+        <div id="filter">
+            <label for="category-filter">Filter by category:</label>
+            <select id="category-filter" onchange="filterByCategory()">
+                <option value="all">All</option>
+                <option value="tech">Tech</option>
+                <option value="lifestyle">Lifestyle</option>
+                <option value="travel">Travel</option>
+                <option value="education">Education</option>
+            </select>
+        </div>
+        <div id="posts-container">
+            <!-- Blog posts will be dynamically injected here -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 BlogSphere</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
